@@ -4,7 +4,7 @@ find_package(mo2-cmake CONFIG REQUIRED)
 find_package(mo2-uibase CONFIG REQUIRED)
 
 add_library(installer_fomod_csharp SHARED)
-mo2_configure_plugin(installer_fomod_csharp WARNINGS OFF CLI ON)
+mo2_configure_plugin(installer_fomod_csharp WARNINGS OFF CLI ON WERROR ON)
 target_link_libraries(installer_fomod_csharp PRIVATE mo2::uibase)
 mo2_install_plugin(installer_fomod_csharp)
 
