@@ -341,9 +341,9 @@ namespace CSharp {
         std::shared_ptr<const IFileTree> tree = e->parent();
         decltype(tree) oTree = nullptr;
         while (oTree == nullptr && tree != nullptr) {
-          auto it = g.InstalledEntries.find(tree);
-          if (it != g.InstalledEntries.end()) {
-            oTree = it->second->astree();
+          auto treeIt = g.InstalledEntries.find(tree);
+          if (treeIt != g.InstalledEntries.end()) {
+            oTree = treeIt->second->astree();
           }
           else {
             tree = tree->parent();
